@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.slesarev.MontereyJack.CheeseRepository.CheeseRepository;
+import ru.slesarev.MontereyJack.repository.CheeseRepository;
 import ru.slesarev.MontereyJack.Entity.Cheese;
 
 import java.util.ArrayList;
@@ -16,8 +16,11 @@ import java.util.Optional;
 @RequestMapping("/")
 public class CheeseController {
 
-    @Autowired
-    CheeseRepository cheeseRepository;
+    final CheeseRepository cheeseRepository;
+
+    public CheeseController(CheeseRepository cheeseRepository) {
+        this.cheeseRepository = cheeseRepository;
+    }
 
     @GetMapping("/cheeses")
     public ResponseEntity<List<Cheese>> getAllCheese(String name) {

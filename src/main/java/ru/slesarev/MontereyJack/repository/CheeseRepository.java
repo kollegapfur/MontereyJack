@@ -1,4 +1,4 @@
-package ru.slesarev.MontereyJack.CheeseRepository;
+package ru.slesarev.MontereyJack.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.slesarev.MontereyJack.Entity.Cheese;

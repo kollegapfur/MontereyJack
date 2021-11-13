@@ -1,15 +1,16 @@
 package ru.slesarev.MontereyJack.Service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.slesarev.MontereyJack.CheeseRepository.CheeseRepository;
+import org.springframework.stereotype.Service;
+import ru.slesarev.MontereyJack.repository.CheeseRepository;
 import ru.slesarev.MontereyJack.Entity.Cheese;
 import ru.slesarev.MontereyJack.Service.CheeseService;
 
 import java.util.List;
-
+@Service
 public class CheeseServiceImpl implements CheeseService {
 
-    private CheeseRepository cheeseRepository;
+    private final CheeseRepository cheeseRepository;
 
     @Autowired
     public CheeseServiceImpl(CheeseRepository cheeseRepository){
